@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Run EXE</title>
+</head>
+<body>
+  <button id="runExe">Run EXE</button>
+  <script>
+    document.getElementById('runExe').addEventListener('click', () => {
+      fetch('http://localhost:3000/run-exe')
+        .then(response => response.text())
+        .then(data => console.log(data))
+        .catch(error => console.error('Error:', error));
+    });
+  </script>
+</body>
+</html>
