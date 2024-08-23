@@ -1,11 +1,27 @@
 {
   "name": "your-app",
   "version": "1.0.0",
-  "scripts": {
-    "start": "node server.js" 
-  },
-  "dependencies": {
-    "express": "^4.17.1",
-    "cors": "^2.8.5"
+  "build": {
+    "appId": "com.yourapp.id",
+    "productName": "MyApp",
+    "files": [
+      "dist/**/*",
+      "node_modules/**/*",
+      "main.js",
+      "index.html",
+      "package.json"
+    ],
+    "directories": {
+      "output": "release"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "mac": {
+      "target": "dmg"
+    },
+    "linux": {
+      "target": ["AppImage", "deb"]
+    }
   }
 }
